@@ -90,3 +90,13 @@ body,
     @apply bg-background text-foreground;
   }
 }
+
+/* Clerk styles changed */
+.cl-formButtonPrimary,
+.cl-internal-b3fm6y {
+  background: #6554a5;
+}
+
+.cl-footerActionLink {
+  color: #6554a5;
+}
