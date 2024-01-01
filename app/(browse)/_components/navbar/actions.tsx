@@ -18,7 +18,7 @@ export const Actions = async () => {
         <>
           <SignInButton>
             <Button size="sm" variant="default">
-              Login
+              Log in
             </Button>
           </SignInButton>
           <SignUpButton>

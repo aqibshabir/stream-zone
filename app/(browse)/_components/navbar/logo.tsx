@@ -18,10 +18,10 @@ export const Logo = () => {
       <div className="bg-white rounded-full p-1 mr-20 shrink-0 lg:mr-0 lg:shrink">
         <Image src="/logo.svg" alt="logo" height="45" width="45" />
       </div>
-      <div className={cn("hidden lg:block", font.className)}>
+      {/* <div className={cn("hidden lg:block", font.className)}>
         <p className="text-lg font-semibold">Stream Zone</p>
         <p className="text-xs text-muted-foreground">Stream now</p>
-      </div>
+      </div> */}
     </Link>
   );
 };
