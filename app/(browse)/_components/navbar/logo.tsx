@@ -13,10 +13,10 @@ export const Logo = () => {
   return (
     <Link
       href="/"
-      className="flex items-center gap-x-4 hover:opacity-50 transition "
+      className="flex items-center gap-x-4 hover:opacity-70 transition "
     >
-      <div className="bg-white rounded-full p-1 mr-12 shrink-0 lg:mr-0 lg:shrink">
-        <Image src="/logo.svg" alt="logo" height="32" width="32" />
+      <div className="bg-white rounded-full p-1 mr-20 shrink-0 lg:mr-0 lg:shrink">
+        <Image src="/logo.svg" alt="logo" height="45" width="45" />
       </div>
       <div className={cn("hidden lg:block", font.className)}>
         <p className="text-lg font-semibold">Stream Zone</p>
