@@ -32,7 +32,7 @@ export const Actions = async () => {
         <div className="flex  items-center gap-x-4">
           <Button
             size="sm"
-            variant="ghost"
+            variant="ghostPurple"
             className="text-white hover:text-primary"
             asChild
           >
