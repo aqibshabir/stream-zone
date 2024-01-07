@@ -6,16 +6,16 @@ import { Button } from "@/components/ui/button";
 
 export const Actions = () => {
   return (
-    <div className="flex items-center justify-end gap-x-2">
+    <div className="flex items-center justify-end gap-x-4">
       <Button
         size="sm"
         variant="ghostPurple"
-        className="text-muted-foreground hover:text-primary"
+        className="text-muted-primary hover:text-primary"
         asChild
       >
         <Link href="/">
-          <LogOut className="h-5 w-5 mr-2" />
-          Exit
+          <LogOut className="h-5 w-5 lg:mr-2" />
+          <span className="hidden lg:block">Exit</span>
         </Link>
       </Button>
       <UserButton afterSignOutUrl="/" />
