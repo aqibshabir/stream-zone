@@ -1,7 +1,9 @@
 "use client";
 
-import { useViewerToken } from "@/hooks/use-viewer-token";
 import { Stream, User } from "@prisma/client";
+import { LiveKitRoom } from "@livekit/components-react";
+
+import { useViewerToken } from "@/hooks/use-viewer-token";
 
 interface StreamPlayerProps {
   user: User & { stream: Stream | null };
@@ -22,5 +24,11 @@ export const StreamPlayer = ({
     return <div>Cannot watch the stream</div>;
   }
 
-  return <div>Allowed to watch the stream</div>;
+  return (
+    <>
+      <LiveKitRoom token={token} serverUrl={process.env.LIVEKIT_API_WS_URL}>
+        Stream
+      </LiveKitRoom>
+    </>
+  );
 };
