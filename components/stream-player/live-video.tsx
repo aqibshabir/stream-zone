@@ -1,10 +1,11 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Participant, Track } from "livekit-client";
 import { useTracks } from "@livekit/components-react";
 import { useEventListener } from "usehooks-ts";
 import { FullscreenControl } from "./fullscreen-control";
+import { VolumeControl } from "./volume-control";
 
 interface LiveVideoProps {
   participant: Participant;
@@ -15,6 +16,28 @@ export const LiveVideo = ({ participant }: LiveVideoProps) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [volume, setVolume] = useState(0);
+
+  const onVolumeChange = (value: number) => {
+    setVolume(+value);
+    if (videoRef?.current) {
+      videoRef.current.muted = value === 0;
+      videoRef.current.volume = +value * 0.01;
+    }
+  };
+
+  const toggleMute = () => {
+    const isMuted = volume === 0;
+    setVolume(isMuted ? 50 : 0);
+    if (videoRef?.current) {
+      videoRef.current.muted = !isMuted;
+      videoRef.current.volume = isMuted ? 0.5 : 0;
+    }
+  };
+
+  useEffect(() => {
+    onVolumeChange(0);
+  }, []);
 
   const toggleFullscreen = () => {
     if (isFullscreen) {
@@ -43,7 +66,12 @@ export const LiveVideo = ({ participant }: LiveVideoProps) => {
     <div ref={wrapperRef} className="relative h-full flex">
       <video ref={videoRef} width="100%" />
       <div className="absolute top-0 h-full w-full opacity-0 hover:opacity-100 hover:transition-all">
-        <div className="absolute bottom-0 flex h-12 w-full items-center justify-end bg-gradient-to-t from-black/80 px-4">
+        <div className="absolute bottom-0 flex h-12 w-full items-center justify-between bg-gradient-to-t from-black/80 px-4 space-x-6">
+          <VolumeControl
+            onChange={onVolumeChange}
+            value={volume}
+            onToggle={toggleMute}
+          />
           <FullscreenControl
             isFullscreen={isFullscreen}
             onToggle={toggleFullscreen}
