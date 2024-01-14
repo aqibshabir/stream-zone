@@ -33,7 +33,7 @@ export const Search = () => {
   return (
     <form
       onSubmit={onSubmit}
-      className="relative w-full lg:w-[400px] flex items-center"
+      className="relative w-full sm:w-[400px]  flex items-center"
     >
       <Input
         placeholder="search"
@@ -51,7 +51,7 @@ export const Search = () => {
         type="submit"
         size="sm"
         variant="secondary"
-        className="mx-1 hover:bg-[#232329] transition"
+        className="mx-1 hover:bg-[#232329] transition h-10 rounded-lg"
       >
         <SearchIcon className="h-5 w-5 text-muted-foreground" />
       </Button>
