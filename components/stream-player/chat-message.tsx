@@ -14,11 +14,11 @@ export const ChatMessage = ({ data }: ChatMessageProps) => {
 
   return (
     <div className="flex gap-2 p-2 rounded-md hover:bg-white/5">
-      <p className="text-xs text-white/30 flex items-start mr-2">
-        {format(data.timestamp, "HH:MM:SS")}
+      <p className="text-xs text-white/30 flex items-start mr=1">
+        {format(data.timestamp, "HH:mm:ss")}
       </p>
       <div className="flex flex-wrap items-baseline gap-1 grow">
-        <p className="text-sm font-semibold whitespace-nowrap mr-1">
+        <p className="text-sm font-semibold whitespace-nowrap mr-0.5">
           <span className="truncate" style={{ color: color }}>
             {`${data.from?.name}:`}
           </span>
