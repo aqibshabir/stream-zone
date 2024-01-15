@@ -10,13 +10,18 @@ const font = Poppins({
 });
 
 export const Logo = () => {
+  const filter =
+    "brightness(0) saturate(100%) invert(95%) sepia(5%) saturate(0%) hue-rotate(358deg) brightness(104%) contrast(108%)";
   return (
-    <Link
-      href="/"
-      className="flex items-center gap-x-4 hover:opacity-70 transition "
-    >
-      <div className="bg-white rounded-full p-1 mr-20 shrink-0 lg:mr-0 lg:shrink">
-        <Image src="/logo.svg" alt="logo" height="45" width="45" />
+    <Link href="/" className="flex items-center gap-x-4  transition ">
+      <div className="rounded-full p-0.25 mr-20 shrink-0 lg:mr-0 lg:shrink hover:bg-[#611FE5]">
+        <Image
+          src="/logo.svg"
+          alt="logo"
+          height="45"
+          width="45"
+          style={{ filter: filter }}
+        />
       </div>
       {/* <div className={cn("hidden lg:block", font.className)}>
         <p className="text-lg font-semibold">Stream Zone</p>

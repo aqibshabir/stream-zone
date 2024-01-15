@@ -13,16 +13,16 @@ import Link from "next/link";
 export const Actions = async () => {
   const user = await currentUser();
   return (
-    <div className="flex items-center justify-end gap-x-2 ml-4 lg:ml-0">
+    <div className="flex items-center justify-end gap-x-2 ml-8 lg:ml-0">
       {!user && (
         <>
           <SignInButton>
-            <Button size="sm" variant="default">
+            <Button size="xs" variant="default" className="text-xs">
               Log in
             </Button>
           </SignInButton>
           <SignUpButton>
-            <Button size="sm" variant="outline">
+            <Button size="xs" variant="outline" className="text-xs">
               Sign up
             </Button>
           </SignUpButton>

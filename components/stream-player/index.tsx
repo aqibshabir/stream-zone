@@ -35,7 +35,7 @@ export const StreamPlayer = ({
   return (
     <>
       {collapsed && (
-        <div className="hidden lg:block fixed top-[100px] right-2 z-50">
+        <div className="hidden lg:block fixed top-[50px] right-2 z-50">
           <ChatToggle />
         </div>
       )}

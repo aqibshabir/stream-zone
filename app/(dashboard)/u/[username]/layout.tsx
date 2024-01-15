@@ -21,7 +21,7 @@ const CreatorLayout = async ({ params, children }: CreatorLayoutProps) => {
   return (
     <>
       <Navbar />
-      <div className="flex h-full pt-20">
+      <div className="flex h-full pt-[40px]">
         <Sidebar />
         <Container>{children}</Container>
       </div>
