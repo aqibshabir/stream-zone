@@ -13,7 +13,7 @@ import Link from "next/link";
 export const Actions = async () => {
   const user = await currentUser();
   return (
-    <div className="flex items-center justify-end gap-x-2 ml-8 lg:ml-0">
+    <div className="flex items-center justify-end gap-x-2 ml-4 lg:ml-0">
       {!user && (
         <>
           <SignInButton>
@@ -33,7 +33,7 @@ export const Actions = async () => {
           <Button
             size="sm"
             variant="ghostPurple"
-            className="text-white hover:text-primary"
+            className="text-white hover:text-primary h-8 p-2"
             asChild
           >
             <Link href={`/u/${user.username}`}>
@@ -41,7 +41,7 @@ export const Actions = async () => {
               <span className="hidden lg:block">Dashboard</span>
             </Link>
           </Button>
-          <div className="hover:opacity-90 transition ">
+          <div className="hover:opacity-80 transition">
             <UserButton afterSignOutUrl="/" />
           </div>
         </div>

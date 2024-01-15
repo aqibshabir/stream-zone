@@ -39,7 +39,7 @@ export const Search = () => {
         placeholder="search"
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        className="focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 text-xs"
+        className="focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 text-sm"
       />
       {value && (
         <X
@@ -51,7 +51,7 @@ export const Search = () => {
         type="submit"
         size="sm"
         variant="secondary"
-        className="mx-1 hover:bg-[#232329] transition h-8 rounded-md"
+        className="mx-1 hover:bg-[#232329] transition h-8 p-2 rounded-md"
       >
         <SearchIcon className="h-5 w-5 text-muted-foreground" />
       </Button>

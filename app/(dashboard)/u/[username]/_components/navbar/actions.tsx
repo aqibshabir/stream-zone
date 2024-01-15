@@ -10,7 +10,7 @@ export const Actions = () => {
       <Button
         size="sm"
         variant="ghostPurple"
-        className="text-muted-primary hover:text-primary"
+        className="text-muted-primary hover:text-primary h-8 p-2"
         asChild
       >
         <Link href="/">
@@ -18,7 +18,9 @@ export const Actions = () => {
           <span className="hidden lg:block">Exit</span>
         </Link>
       </Button>
-      <UserButton afterSignOutUrl="/" />
+      <div className="hover:opacity-80 transition">
+        <UserButton afterSignOutUrl="/" />
+      </div>
     </div>
   );
 };
