@@ -7,7 +7,7 @@ export const Logo = () => {
   return (
     <div className="mr-20 lg:mr-0">
       <Link href="/" className="flex items-center gap-x-4 transition ">
-        <div className="rounded-full shrink-0 lg:shrink hover:bg-[#7c3bff]">
+        <div className="rounded-full shrink-0 lg:shrink hover:scale-110 ease-in-out duration-100">
           <Image
             src="/logo.svg"
             alt="logo"
