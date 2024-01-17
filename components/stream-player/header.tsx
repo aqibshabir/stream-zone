@@ -1,14 +1,14 @@
 "use client";
-
+import { UserIcon } from "lucide-react";
+import { VerifiedMark } from "@/components/verified-mark";
 import {
   useParticipants,
   useRemoteParticipant,
 } from "@livekit/components-react";
 
-import { UserAvatar } from "@/components/user-avatar";
-import { VerifiedMark } from "@/components/verified-mark";
-import { UserIcon } from "lucide-react";
-import { Actions } from "./actions";
+import { Skeleton } from "@/components/ui/skeleton";
+import { UserAvatar, UserAvatarSkeleton } from "@/components/user-avatar";
+import { Actions, ActionsSkeleton } from "./actions";
 
 interface HeaderProps {
   hostName: string;
@@ -37,7 +37,7 @@ export const Header = ({
   const isHost = viewerIdentity === hostAsViewer;
 
   return (
-    <div className="flex  lg:flex-row gap-y-4 lg:gap-y-0 items-start justify-between px-4">
+    <div className="flex lg:flex-row gap-y-4 lg:gap-y-0 items-start justify-between px-4">
       <div className="flex items-center gap-x-3">
         <UserAvatar
           imageUrl={imageUrl}
@@ -75,6 +75,26 @@ export const Header = ({
             Offline
           </p>
         )}
+      </div>
+    </div>
+  );
+};
+
+export const HeaderSkeleton = () => {
+  return (
+    <div className="flex lg:flex-row gap-y-4 lg:gap-y-0 items-start justify-between px-4">
+      <div className="flex items-center gap-x-3">
+        <UserAvatarSkeleton size="lg" />
+        <div className="space-y-1">
+          <Skeleton className="h-6 w-32" />
+          <Skeleton className="h-4 w-24" />
+        </div>
+      </div>
+      <div className="flex flex-col">
+        <ActionsSkeleton />
+        <div className="flex justify-end mt-2 items-center">
+          <Skeleton className="h-4 w-10" />
+        </div>
       </div>
     </div>
   );
