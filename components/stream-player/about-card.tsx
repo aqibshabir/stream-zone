@@ -1,7 +1,6 @@
 "use client";
 
 import { VerifiedMark } from "@/components/verified-mark";
-
 import { BioModel } from "./bio-model";
 
 interface AboutCardProps {
