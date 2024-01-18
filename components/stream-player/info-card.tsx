@@ -27,7 +27,7 @@ export const InfoCard = ({
 
   return (
     <div className="px-4">
-      <div className="rounded-xl bg-background">
+      <div className="rounded-xl bg-background mt-8">
         <div className="flex items-center gap-x-2.5 p-4">
           <div>
             <h2 className="text-sm lg:text-lg font-semibold capitalize">
