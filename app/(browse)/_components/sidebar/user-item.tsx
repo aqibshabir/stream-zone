@@ -19,9 +19,6 @@ interface UserItemProps {
 export const UserItem = ({ username, imageUrl, isLive }: UserItemProps) => {
   const pathname = usePathname();
 
-  //I'll eventually get this from the db
-  const currentGame = "Fortnite";
-
   const { collapsed } = useSidebar((state) => state);
 
   const href = `/${username}`;
@@ -47,8 +44,6 @@ export const UserItem = ({ username, imageUrl, isLive }: UserItemProps) => {
           {!collapsed && (
             <div className="flex flex-col">
               <p className="truncate text-base">{username}</p>
-              {/* this will change soon */}
-              <p className="text-sm text-gray-500">{currentGame}</p>
             </div>
           )}
           {!collapsed && isLive && <LiveBadge className="ml-auto" />}

@@ -3,6 +3,7 @@ import { getSelf } from "@/lib/auth-service";
 
 export const getStreams = async () => {
   let userId;
+
   try {
     const self = await getSelf();
     userId = self.id;
@@ -25,8 +26,12 @@ export const getStreams = async () => {
           },
         },
       },
-      include: {
+      select: {
         user: true,
+        id: true,
+        thumbnailUrl: true,
+        name: true,
+        isLive: true,
       },
       orderBy: [
         {
@@ -39,8 +44,12 @@ export const getStreams = async () => {
     });
   } else {
     streams = await db.stream.findMany({
-      include: {
+      select: {
         user: true,
+        id: true,
+        thumbnailUrl: true,
+        name: true,
+        isLive: true,
       },
       orderBy: [
         {
@@ -52,5 +61,6 @@ export const getStreams = async () => {
       ],
     });
   }
+
   return streams;
 };
