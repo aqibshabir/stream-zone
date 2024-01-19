@@ -1,6 +1,6 @@
 import { getBlockedUsers } from "@/lib/block-service";
 import { columns } from "./_components/columns";
-import { DataTable } from "./_components/data";
+import { DataTable } from "./_components/data-table";
 import { format } from "date-fns";
 
 const Community = async () => {
