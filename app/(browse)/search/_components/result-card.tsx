@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Stream, User } from "@prisma/client";
+import { User } from "@prisma/client";
 import { formatDistanceToNow } from "date-fns";
 
 import { Skeleton } from "@/components/ui/skeleton";
@@ -7,7 +7,14 @@ import { Thumbnail, ThumbnailSkeleton } from "@/components/thumbnail";
 import { VerifiedMark } from "@/components/verified-mark";
 
 interface ResultCardProps {
-  data: Stream & { user: User };
+  data: {
+    id: string;
+    name: string;
+    thumbnailUrl: string | null;
+    isLive: boolean;
+    updatedAt: Date;
+    user: User;
+  };
 }
 
 export const ResultCard = ({ data }: ResultCardProps) => {
@@ -24,7 +31,7 @@ export const ResultCard = ({ data }: ResultCardProps) => {
         </div>
         <div className="space-y-1">
           <div className="flex items-center gap-x-2">
-            <p className="font-bold text-xl cursor-pointer hover:text-[#6c23ff] hover:underline">
+            <p className="font-bold text-xl cursor-pointer hover:text-[#6c23ff]">
               {data.user.username}
             </p>
             <VerifiedMark />
@@ -44,7 +51,7 @@ export const ResultCard = ({ data }: ResultCardProps) => {
 
 export const ResultCardSkeleton = () => {
   return (
-    <div className="w-full flex gap-x-4">
+    <div className="w-full flex flex-col gap-x-4">
       <div className="relative h-[9rem] w-[16rem]">
         <ThumbnailSkeleton />
         <div className="space-y-2">
