@@ -44,7 +44,7 @@ export const Search = () => {
       {value && (
         <X
           onClick={onClear}
-          className="absolute top-2.5 right-14 h-5 w-5 text-muted-foreground cursor-pointer hover:opacity-75 transition"
+          className="absolute top-1.5 right-14 h-5 w-5 text-muted-foreground cursor-pointer hover:opacity-75 transition"
         />
       )}
       <Button
