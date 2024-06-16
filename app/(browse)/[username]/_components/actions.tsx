@@ -47,8 +47,7 @@ const Actions = ({ isFollowing, userId }: ActionsProps) => {
     startTransition(() => {
       onBlock(userId)
         .then((data) =>
-          toast.success(`${data.blocked.username} is now blocked`)
-        )
+         data ? toast.success(`${data.blocked.username} is now blocked`) : toast.error("Something went wrong"))
         .catch(() => toast.error("Something went wrong"));
     });
   };
